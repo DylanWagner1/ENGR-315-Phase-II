@@ -1,0 +1,19 @@
+QUESTION 1: How does curing age relate to compressive strength?
+Number of concrete samples: 70
+Pearson correlation (age vs. strength): r = 0.4213
+Logarithmic fitted curve (age > 0): strength (MPa) = 17.8819 + 5.4404 ln(age in days)
+Coefficient of determination for logarithmic fit: R^2 = 0.3785
+
+Strength grouped by curing age:
+ Age (days)    Count   Mean (MPa)    Std (MPa)
+          3        4        10.53         3.11
+          7        7        27.47         9.58
+         28       13        44.69        16.74
+         90       12        42.88         5.88
+        180       12        44.91         5.38
+        270       10        47.01         6.56
+        360        2        44.50         0.28
+        365       10        47.99         6.66
+
+Plot saved: plots/example_first_70_q1.png
+Interpretation: The raw correlation is descriptive; differences in mix design may confound the age relationship.
