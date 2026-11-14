@@ -1,0 +1,9 @@
+QUESTION 3: How does average 28-day strength compare with and without fly ash?
+Total samples cured for exactly 28 days: 425
+Without fly ash: n = 208, mean = 39.54 MPa, SD = 15.76 MPa
+With fly ash:    n = 217, mean = 34.07 MPa, SD = 13.12 MPa
+Mean difference (with - without): -5.47 MPa
+Welch two-sample t-test: t = -3.8776, p = 0.0001232
+
+Plot saved: plots/q3_fly_ash.png
+Interpretation: Differences between groups do not prove the effect of adding fly ash, because mix ingredients also vary.

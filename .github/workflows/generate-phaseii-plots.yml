@@ -1,0 +1,41 @@
+name: Generate Phase II plots and outputs
+
+on:
+  push:
+    paths:
+      - ".github/workflows/generate-phaseii-plots.yml"
+      - "ENGR315_Team33_PhaseII/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install packages
+        run: python -m pip install -r ENGR315_Team33_PhaseII/requirements.txt
+      - name: Generate full-data plots and terminal outputs
+        working-directory: ENGR315_Team33_PhaseII
+        run: python run_all.py
+      - name: Commit generated PNGs, output files, dataset and README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ENGR315_Team33_PhaseII/data/concrete.csv
+          git add ENGR315_Team33_PhaseII/plots/q1_curing_age.png
+          git add ENGR315_Team33_PhaseII/plots/q2_water_cement.png
+          git add ENGR315_Team33_PhaseII/plots/q3_fly_ash.png
+          git add ENGR315_Team33_PhaseII/results/
+          git add ENGR315_Team33_PhaseII/README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Add generated Phase II plots, dataset and terminal outputs"
+            git push
+          fi

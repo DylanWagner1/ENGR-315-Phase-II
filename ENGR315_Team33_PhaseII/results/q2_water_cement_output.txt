@@ -1,0 +1,11 @@
+QUESTION 2: How does water-to-cement ratio relate to compressive strength?
+Number of concrete samples with positive cement content: 1030
+Mean water-to-cement ratio: 0.7483 (unitless)
+Pearson correlation: r = -0.5007
+Regression line: strength (MPa) = 55.7502 + -26.6379 * water/cement ratio
+Coefficient of determination: R^2 = 0.2507
+Slope: -26.6379 MPa per 1.0 unit of water/cement ratio
+Two-sided slope p-value: 1.86e-66
+
+Plot saved: plots/q2_water_cement.png
+Interpretation: This is a raw association; the cement ratio is not adjusted for supplementary binders or sample age.
